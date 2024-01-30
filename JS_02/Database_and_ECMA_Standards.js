@@ -65,4 +65,8 @@ Notice here for null, we get returned back an object, when we use typeof, for un
 
 This tells us undefined is a type in itself whereas null is an object
 ############      INTERVIEW QUESTION        ###############
+<<<<<<< HEAD
 */
+=======
+/*
+>>>>>>> f39ae0f (done 4, 5, 6)
