@@ -38,9 +38,9 @@ eg. 2 to power 53
 7. double
 
 8. null (this is a standalone value)
-(empty value basically)
+(empty value basically) *******************************
 
-9. undefined (when we donot give / assign a value)
+9. undefined (when we donot give / assign a value) *****************************
 
 10. Symbol -> Unique (used in React, for symbols, components etc.)
 
@@ -65,8 +65,5 @@ Notice here for null, we get returned back an object, when we use typeof, for un
 
 This tells us undefined is a type in itself whereas null is an object
 ############      INTERVIEW QUESTION        ###############
-<<<<<<< HEAD
+
 */
-=======
-/*
->>>>>>> f39ae0f (done 4, 5, 6)

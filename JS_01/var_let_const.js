@@ -16,7 +16,7 @@ accountPassword = "Mandir yahin banega";  // Valid, as 'accountPassword' is decl
 
 accountCity = "haridwar";  // Valid, updates the value of 'accountCity'
 
-console.table([accountId, accountEmail, accountPassword, accountState]);
+console.table([accountId, accountEmail, accountPassword, accountCity, accountState]);
 console.log(accountCity);
 
 
