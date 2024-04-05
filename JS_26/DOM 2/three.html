@@ -1,0 +1,69 @@
+<!-- OPEN THIS IN A WEBVIEW -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Learning Three HTML</title>
+</head>
+  <body style="background-color: #212121; color: #fff;">
+
+</body>
+
+  <script>
+    // Creating a div element inside the script tag
+
+    const div = document.createElement('div');
+    console.log(div)
+
+    // Now every element here (including the div tag) is a nodelist with many values.
+
+    // Let us add some values
+    div.className = "main"
+    // div.id = "myId"
+
+    // Let us get some fun with IDs
+
+    div.id = Math.round(Math.random() * 10 + 1)
+
+    // Math.random = 0.45454545 in this format
+
+    // Math.random * 10 = 0.4545645 to 9.15646515
+
+    // Math.random * 10 + 1 = 1.4545645 to 9.15646515
+
+    // the decimal numbers can be any random number
+
+    // Math.round(Math.random() * 10 + 1) => 1 to 9
+
+    div.setAttribute("title", "my title")
+
+    div.style.backgroundColor = "red"
+
+    div.style.padding = "12px"
+
+    // div.innerText = "Hello"
+
+    // div.setAttribute() is more preferred over div.innerText() as div.innerText() overrides the values.
+
+    // div.innerText brings the values from the memory and then sets them, whereas the div.setAttribute sets the values directly and hence makes the code more optimized.
+
+    // so we do, 
+    const addText = document.createTextNode("My KSD Boi")
+
+    div.appendChild(addText);
+
+
+    // Now after giving all these properties, we still can not see this div. 
+    // It is because the div is inside the memory
+
+    // So let us now attach this div to the document in webview
+
+    document.body.appendChild(div)
+
+    // We can wrap all this code of creating a div in a function and maybe use a loop or something else.
+
+  </script>
+</html>

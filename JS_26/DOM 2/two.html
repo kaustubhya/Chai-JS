@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Learning 2</title>
+</head>
+<!-- Dark Mode -->
+<body style="background-color: #212121; color: #fff;">
+  <div class="parent">
+    <div class="day">Monday</div>
+    <div class="day">Tuesday</div>
+    <div class="day">Wednesday</div>
+    <div class="day">Thursday</div>
+
+    <!-- Target 1 => Select the parent element and see what all values come out of it to us -->
+    <script>
+      const parent = document.querySelector('.parent')
+      console.log(parent)
+
+      // Now we get an HTML Collection by running the following code
+      console.log(parent.children)
+      // This is an array like thing so we can access its individual elements by mentioning its index, like this:
+      console.log(parent.children[2])
+      // This will give us the full div tag, to get the text inside the div tag, we can use the following code:
+      console.log(parent.children[2].innerHTML)
+
+      // Now let us use a normal for loop in this html collection (no need to convert it into an array here) 
+
+      for(let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+      }
+
+      // Similarly we can style the Elements in the HTML Collection using the following code:
+
+      parent.children[1].style.color = 'red'
+      // Made the element at index 1 red
+
+   // Now let us see some methods with parent
+      console.log(parent.firstElementChild);
+      console.log(parent.lastElementChild);
+      // These 2 helped us move from parent to child
+
+      // Now let us move from child to parent
+
+      // Let us first create the child
+
+      const dayOne = document.querySelector('.day')
+      console.log(dayOne)
+      // This gives the first element i.e. Monday here (it is not querySelectorAll)
+      // Now we know that DOM is a tree-like structure and we use querySelector to traverse that tree.
+
+      // So now, let us access the parent from the child
+
+      console.log(dayOne.parentElement)
+
+      // Now let us look at the siblings of the child (Monday here)
+
+      console.log(dayOne.nextElementSibling)
+
+      console.log("Nodes: ", parent.childNodes)
+      // This gives the number of nodes of the parent
+
+      // This gives us a very complex structure
+
+      // Line breaks, tags, comments, texts, scripts etc. all are different nodes.
+
+
+    </script>
+
+  </div>  
+</body>
+</html>
