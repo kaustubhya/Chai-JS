@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Learning 4</title>
+</head>
+
+<body style="background-color: #212121; color: white" ;>
+  <ul class="language">
+    <li>JavaScript</li>
+  </ul>
+</body>
+
+<script>
+  /* We will now add some list items here. 
+  To make it work in any language, let us define a function for it. */
+
+  function addLanguage(languageName) {
+    const li = document.createElement('li')
+
+    li.innerHTML = `${languageName}`  // 🛑🛑 Give Backticks
+
+    // Appending it to the ul className
+
+    document.querySelector('.language').appendChild(li)
+
+  }
+
+  // making the function call to run the function
+  addLanguage("python")
+  addLanguage("java")
+  addLanguage("cpp")
+
+
+  // Now the above method works fine but it is not that much optimal, as the .innerHTML method is traversing the whole DOM tree which is not that optimal.
+
+  // So, we will use the .createTextNode method to append the li element to the ul className.
+
+  function addLanguageOptimised(langName) {
+
+    const li = document.createElement('li')
+
+    const addNode = document.createTextNode(langName)
+
+    li.appendChild(addNode)
+
+    document.querySelector('.language').appendChild(li)
+  }
+
+  addLanguageOptimised("golang")
+  addLanguageOptimised("ruby")
+
+
+  // 🛑🛑 Now Let us look at Editing DOM Elements
+
+  const secondLang = document.querySelector('li:nth-child(2)')
+  // selecting the second li element i.e. python
+
+  // Using a new and different way of editing things
+
+  const newLi = document.createElement('li')
+
+  newLi.textContent = "KSD ki Lang"
+  // .textContent works somewhat similar to .innerHTML
+
+  secondLang.replaceWith(newLi)
+
+
+  // Another Edit Example with a new method
+  const firstLang = document.querySelector("li:nth-child(1)")
+  firstLang.outerHTML = '<li>Mango Lang</li>'
+
+
+  // 🛑🛑 Removing the DOM Elements
+
+  // Removing the last element
+
+  const lastLang = document.querySelector("li:last-child")
+
+  lastLang.remove()
+
+
+
+
+</script>
+
+</html>
