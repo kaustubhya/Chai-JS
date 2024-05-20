@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htnml Events</title>
+  </head>
+
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+
+  <script>
+    // <!-- 🛑🛑 Our task is: When we click on an image, the li should get removed -->
+
+    // Now selecting one image id after another won't be feasible, so let us select the id of their parent i.e. the ul id
+
+    const imageList = document.querySelector("#images");
+
+    imageList.addEventListener(
+      "click",
+      function (e) {
+        console.log(e.target.parentNode);
+        // let us now check their target elements i.e. e.target
+        // We get the image details when we click on the image
+
+        // let us now try to access the list items (li is parent node of img)
+        // e.target.parentNode
+
+        // let us now try to remove this node:
+
+        // 🛑🛑🛑🛑 removing li (parent node of img)
+        // const remove = e.target.parentNode.remove();
+
+        // // Another method for removal
+        // // get the parentNode of li i.e. ul, and then remove the child of ul i.e. li 🛑🛑🛑
+
+        // const listLi = e.target.parentNode;
+
+        // const removeLi = listLi.parentNode.removeChild(listLi)
+
+        // Now there is one edge case, if we click on anywhere other than the image in the ul, all the images are deleted at once
+
+        // So we need to make sure that only the li tag is removed inside the ul
+
+        // use an if for this and match for IMG tag name, then we find parent node of IMG and use any of the above 2 methods to remove the li 
+
+        if (e.target.tagName === "IMG") {
+          console.log(e.target.id);
+          const listLi = e.target.parentNode;
+          const removeLi = listLi.parentNode.removeChild(listLi);
+        }
+      },
+      false,
+    );
+  </script>
+</html>
