@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KSD Async 2</title>
+</head>
+
+<body>
+  <h1>KSD Async</h1>
+  <button id='stop'>Click to Stop</button>
+
+</body>
+<script>
+  setTimeout(function () {
+    console.log("God level KSD!")
+  }, 2000)
+
+  // we can also write the handler function outside setTimeout() and give its reference inside of the setTimeout()
+
+  // eg. 
+
+  const handlerRef = function() {
+    console.log("Majja aa gaya");
+  }
+
+  setTimeout(handlerRef, 5000);
+
+  // let us now try to change the h1 text
+
+
+  const domRef = function () {
+    document.querySelector('h1').innerHTML = "KSD is a God!";
+  }
+
+  const setTimeOutRef = setTimeout(domRef, 5000);
+
+  // such techniques are used in Pop-Ups in websites
+
+  // Now to negate the effect of this setTimeout(), we have a clearTimeout(). When we use clearTimeout(), we are able to nullify the effect of setTimeOut() before it executes.
+
+  // When we use clearTimeout(), whatever methods were there in the queue which was sent by setTimeout() are discarded from the queue by clearTimeout(). 
+
+  // Let us see below
+
+  // clearTimeout(setTimeOutRef)
+
+  // But here it stops the actions of setTimeout on its own automatically, so let us try to gain control over clearTimeout by using it as an event.
+
+  document.querySelector('#stop').addEventListener('click', function() {
+    clearTimeout(setTimeOutRef);
+    console.log("STOPPED!!")
+    // This console lets us know that the event has been stopped 
+  })
+
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KSD Async 3</title>
+</head>
+
+<body>
+  <h1>KSD Async 3</h1>
+
+  <button id='start'>Click to Start</button>
+
+  <button id='stop'>Click to Stop</button>
+
+</body>
+<script>
+  // Let us see the working of setInterval() now
+
+  // const setIntervalRef = setInterval(function() {
+  //   // console.log("Hello World");
+
+  //   // Since it is hard to keep track of outputs, let us add a Date.now() with this
+  //   console.log("KSD", Date.now())
+  // }, 2000)
+
+  // we can also pass parameters in setInterval, see this example
+
+  // for the sake of scoping we define the function reference outside the scope; in global scope along with the function
+  let intervalId;
+  function sayDate(str) {
+    console.log(str, Date.now())
+  }
+  document.querySelector('#start').addEventListener('click', function () {
+    intervalId = setInterval(sayDate, 2000, "David");
+  })
+
+  // to stop the setInterval(), let us use a clearInterval() -> with a stop button
+ document.querySelector('#stop').addEventListener('click', function () {
+    // clearInterval(setIntervalRef);
+    clearInterval(intervalId)
+    console.log("STOPPED!!")
+  })
+</script>
+
+</html>
