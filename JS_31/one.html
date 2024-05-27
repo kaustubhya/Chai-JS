@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KSD APIs </title>
+</head>
+
+<body style="background-color: #212121; color: #fff">
+
+  <main>
+    <div id='main'>
+      <img src={data.avatar_url} </div>
+  </main>
+
+</body>
+<script>
+  const xhr = new XMLHttpRequest()
+  // we can send and receive our data via this request (there are other methods as well)
+
+  // Now XMLHTTPRequest() is a class and we have to make an object from it, so we use the new keyword to create this object and with this, we will get access to all the available objects
+
+  const url = 'https://api.github.com/users/kaustubhya'
+  xhr.open('GET', url);
+  // syntax: xhr.open(method in string, url in string)
+
+  // console.log(xhr.readyState)
+  // this function tells us the status of the request at a certain time
+
+  // if we want to observe the state at every given time i.e. we want to continously monitor the states, then 
+  xhr.onreadystatechange = function () {
+    console.log(xhr.readyState);
+
+    // now let us try to get some text info at a certain state
+    if (xhr.readyState === 4) {
+      // console.log(this.responseText);
+
+      // this will give us the API data from the url after reaching a cerain state.
+      // Since it reached state 4, it meant that we have already done all of our work and data can be fetched easily now.
+
+      // Also, we used "this" keyword here to mention the current context. If we didn't use it, we would get an error.
+
+      // Now to extract a certain piece of info from all this data, we can do it like this,
+
+      // eg, to extract followers info
+      // const data = this.responseText;
+
+      // we can use any other name apart from responseText, it is not mandatory to use this name
+
+      // console.log(data);
+
+      // We will get undefined here, why??
+      // ANS -> Whenever we receive fata, it is in the form of a string. So we need to convert it into a JSON object.
+
+      // See here:
+
+      const data = JSON.parse(this.responseText); // parse converts the string data into object data
+
+      // let us check
+      console.log(typeof data)
+
+      // let us get the followers now
+      console.log(data.followers)
+      console.log(data.avatar_url)
+
+    }
+  }
+
+  // now we see that open is not called in itself, for this, we need to do the following:
+  xhr.send()
+
+
+</script>
+
+</html>
