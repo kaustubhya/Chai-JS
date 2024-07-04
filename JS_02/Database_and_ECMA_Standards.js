@@ -30,7 +30,7 @@ let name = "Monu"
 let isLoggedIn = false
 
 3. Number
-eg. 2 to power 53, 2.569 etc.
+eg. 2 to power 53, 2.569, -58, -12.215235 etc.
 
 4. BigInt
 
