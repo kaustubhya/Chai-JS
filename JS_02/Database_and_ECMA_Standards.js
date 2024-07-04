@@ -19,30 +19,27 @@ https://tc39.es/ecma262/
 
 /*
 datatypes:
+- primitive
+- non-primitive
+
+- primitive datatypes
 1. String 
 let name = "Monu"
 
-2. int 
-let age = 18
-
-3. boolean
+2. boolean
 let isLoggedIn = false
 
-4. Number
-eg. 2 to power 53
+3. Number
+eg. 2 to power 53, 2.569 etc.
 
-5. BigInt
+4. BigInt
 
-6. float
-
-7. double
-
-8. null (this is a standalone value)
+5. null (this is a standalone value)
 (empty value basically) *******************************
 
-9. undefined (when we donot give / assign a value) *****************************
+6. undefined (when we donot give / assign a value) *****************************
 
-10. Symbol -> Unique (used in React, for symbols, components etc.)
+7. Symbol -> Unique (used in React, for symbols, components etc.)
 
 Primitive Datatypes over
 */
