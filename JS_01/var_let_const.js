@@ -21,3 +21,4 @@ console.log(accountCity);
 
 
 // use only const and let and not var as it will not have any issues with the block scope and functional scope.
+
